@@ -3,21 +3,20 @@ SHELL=cmd.exe
 
 ## build: builds all binaries
 build:
-# 	can use vendor below to store and update local copy of dependencies
-#	@go mod vendor
+	@echo "Building Celeritas..."
 	@go build -o tmp/${BINARY_NAME} .
-	@echo Celeritas built!
+	@echo "Celeritas built!"
 
 run: build
-	@echo Staring Celeritas...
+	@echo "Staring Celeritas..."
 	@.\tmp\${BINARY_NAME} &
-	@echo Celeritas started!
+	@echo "Celeritas started!"
 
 clean:
-	@echo Cleaning...
+	@echo "Cleaning..."
 	@go clean
 	@del .\tmp\${BINARY_NAME}
-	@echo Cleaned!
+	@echo "Cleaned!"
 
 start-compose:
 	docker-compose up -d
@@ -26,15 +25,15 @@ stop-compose:
 	docker-compose down
 
 test:
-	@echo Testing...
+	@echo "Testing..."
 	@go test ./...
-	@echo Done!
+	@echo "Done!"
 
 start: run
 
 stop:
-	@echo "Starting the front end..."
+	@echo "Stopping Celeritas..."
 	@taskkill /IM ${BINARY_NAME} /F
-	@echo Stopped Celeritas
+	@echo "Stopped Celeritas"
 
 restart: stop start
