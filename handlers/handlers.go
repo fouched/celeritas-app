@@ -1,7 +1,6 @@
 package handlers
 
 import (
-	"github.com/CloudyKit/jet/v6"
 	"github.com/fouched/celeritas"
 	"myapp/data"
 	"net/http"

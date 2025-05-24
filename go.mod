@@ -5,7 +5,6 @@ go 1.24.3
 require (
 	github.com/CloudyKit/jet/v6 v6.3.1
 	github.com/DATA-DOG/go-sqlmock v1.5.2
-	github.com/fouched/celeritas v0.0.0-00010101000000-000000000000
 	github.com/go-chi/chi/v5 v5.2.1
 	github.com/justinas/nosurf v1.1.1
 	github.com/ory/dockertest/v3 v3.12.0
